@@ -1,9 +1,5 @@
 package Lingua::PlantUML::Encode;
 
-require Exporter;
-@ISA = qw(Exporter);
-@EXPORT_OK = qw(encode_p);
-
 use 5.006;
 use strict;
 use warnings;
@@ -11,6 +7,14 @@ use warnings;
 use Encode qw(encode);
 use Compress::Zlib;
 use MIME::Base64; 
+
+our (@ISA, @EXPORT, @EXPORT_OK);
+BEGIN {
+   require Exporter;
+   @ISA = qw(Exporter);
+   @EXPORT    = qw(encode_p);  # symbols to export on request
+   @EXPORT_OK = qw(encode_p);  # symbols to export on request
+}
 
 =head1 NAME
 
@@ -29,16 +33,17 @@ our $VERSION = '0.01';
 
 =head1 SYNOPSIS
 
-    use Lingua::PlantUML::Encode;
+    use Lingua::PlantUML::Encode qw(encode_p);
 
     my $encoded = encode_p(qq{
        Alice -> Bob: Authentication Request
        Bob --> Alice: Authentication Response
-    }});
+    });
 
-    print $encoded;
-    # outputs 
-    # Syp9J4vLqBLJSCfFib9mB2t9ICqhoKnEBCdCprC8IYqiJIqkuGBAAUW2rJY256DHLLoGdrUS2W00
+    print "http://www.plantuml.com/plantuml/uml/$encoded";
+    print "http://www.plantuml.com/plantuml/png/$encoded";
+    print "http://www.plantuml.com/plantuml/svg/$encoded";
+    print "http://www.plantuml.com/plantuml/txt/$encoded";
 
 =head1 EXPORT
 
@@ -53,7 +58,7 @@ Encoded in UTF-8
 =cut
 
 sub utf8_encode { 
-  Encode::encode('UTF-8', $_[0], Encode::FB_CROAK) 
+  return encode('UTF-8', $_[0]); 
 }
 
 =head2 _compress_with_deflate
@@ -154,9 +159,9 @@ Encodes diagram text descriptions
 =cut
 
 sub encode_p {
-	 my $data = utf8_encode($_[0]);
-	 my $compressed = _compress_with_deflate($data, 9);
-	 return encode64($compressed);
+  my $data = utf8_encode($_[0]);
+  my $compressed = _compress_with_deflate($data, 9);
+  return encode64($compressed);
 }
 
 
@@ -176,7 +181,6 @@ automatically be notified of progress on your bug as I make changes.
 You can find documentation for this module with the perldoc command.
 
     perldoc Lingua::PlantUML::Encode
-
 
 You can also look for information at:
 
