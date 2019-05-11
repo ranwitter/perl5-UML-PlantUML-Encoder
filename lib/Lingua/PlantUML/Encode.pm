@@ -13,15 +13,15 @@ our ( @ISA, @EXPORT, @EXPORT_OK );
 BEGIN {
   require Exporter;
   @ISA       = qw(Exporter);
-  @EXPORT    = qw(encode_p);    # symbols to export on request
+  @EXPORT    = qw(encode_p);    # symbols to export
   @EXPORT_OK = qw(encode_p);    # symbols to export on request
 }
 
 =head1 NAME
 
-Lingua::PlantUML::Encode - Provides PlantUML Language Encoding in Perl
+Lingua::PlantUML::Encode - Provides PlantUML Language's Encoding in Perl
 
-L<http://plantuml.com/text-encoding>
+Encodes PlantUML Diagram Text using the PlantUML Encoding Standard described at L<http://plantuml.com/text-encoding>
 
 =head1 VERSION
 
