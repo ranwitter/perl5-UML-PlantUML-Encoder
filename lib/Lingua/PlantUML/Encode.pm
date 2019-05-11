@@ -76,7 +76,7 @@ sub _compress_with_deflate {
 }
 
 
-=head encode6bit
+=head2 encode6bit
 
 Transform to String of characters that contains only digits, letters, underscore and minus character
 
@@ -105,7 +105,7 @@ sub encode6bit {
 	 return '?';
 }
 
-=head append3bytes
+=head2 append3bytes
 
 Transform adjacent bytes
 
