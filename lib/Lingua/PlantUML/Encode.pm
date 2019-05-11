@@ -19,7 +19,7 @@ BEGIN {
 
 =head1 NAME
 
-Lingua::PlantUML::Encode - an implementation of a PlantUML Language Encoder in Perl
+Lingua::PlantUML::Encode - Provides PlantUML Language Encoding in Perl
 
 L<http://plantuml.com/text-encoding>
 
