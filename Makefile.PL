@@ -17,9 +17,9 @@ my %WriteMakefileArgs = (
         'Test::More' => '0',
     },
     PREREQ_PM => {
-        'Encode'          => '0',
+        'Encode'          => '2.97',
         'Compress::Zlib'  => '0',
-        'MIME::Base64'    => '0',
+        'MIME::Base64'    => '3.15',
     },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean => { FILES => 'UML-PlantUML-Encoder-*' },
