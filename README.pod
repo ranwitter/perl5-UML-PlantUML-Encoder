@@ -1,6 +1,6 @@
 =head1 NAME
 
-Lingua::PlantUML::Encode - Provides PlantUML Language's Encoding in Perl
+UML::PlantUML::Encoder - Provides PlantUML Language's Encoding in Perl
 
 Encodes PlantUML Diagram Text using the PlantUML Encoding Standard described at L<http://plantuml.com/text-encoding>
 
@@ -13,7 +13,7 @@ Version 0.01
 
 =head1 SYNOPSIS
 
-    use Lingua::PlantUML::Encode qw(encode_p);
+    use UML::PlantUML::Encoder qw(encode_p);
 
     my $encoded = encode_p(qq{
        Alice -> Bob: Authentication Request
@@ -80,7 +80,7 @@ Rangana Sudesha Withanage, C<< <rwi at cpan.org> >>
 =head1 BUGS
 
 Please report any bugs or feature requests to C<bug-lingua-plantuml-encode at rt.cpan.org>, or through
-the web interface at L<https://rt.cpan.org/NoAuth/ReportBug.html?Queue=Lingua-PlantUML-Encode>.  I will be notified, and then you'll
+the web interface at L<https://rt.cpan.org/NoAuth/ReportBug.html?Queue=UML-PlantUML-Encoder>.  I will be notified, and then you'll
 automatically be notified of progress on your bug as I make changes.
 
 
@@ -88,7 +88,7 @@ automatically be notified of progress on your bug as I make changes.
 
 You can find documentation for this module with the perldoc command.
 
-    perldoc Lingua::PlantUML::Encode
+    perldoc UML::PlantUML::Encoder
 
 You can also look for information at:
 
@@ -96,19 +96,19 @@ You can also look for information at:
 
 =item * RT: CPAN's request tracker (report bugs here)
 
-L<https://rt.cpan.org/NoAuth/Bugs.html?Dist=Lingua-PlantUML-Encode>
+L<https://rt.cpan.org/NoAuth/Bugs.html?Dist=UML-PlantUML-Encoder>
 
 =item * AnnoCPAN: Annotated CPAN documentation
 
-L<http://annocpan.org/dist/Lingua-PlantUML-Encode>
+L<http://annocpan.org/dist/UML-PlantUML-Encoder>
 
 =item * CPAN Ratings
 
-L<https://cpanratings.perl.org/d/Lingua-PlantUML-Encode>
+L<https://cpanratings.perl.org/d/UML-PlantUML-Encoder>
 
 =item * Search CPAN
 
-L<https://metacpan.org/release/Lingua-PlantUML-Encode>
+L<https://metacpan.org/release/UML-PlantUML-Encoder>
 
 =back
 

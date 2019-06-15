@@ -49,7 +49,7 @@ TODO: {
 
   not_in_file_ok( Changes => "placeholder date/time" => qr(Date/time) );
 
-  module_boilerplate_ok('lib/Lingua/PlantUML/Encode.pm');
+  module_boilerplate_ok('lib/UML/PlantUML/Encoder.pm');
 
 }
 

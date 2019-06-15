@@ -7,9 +7,9 @@ use Test::More;
 plan tests => 1;
 
 BEGIN {
-  use_ok('Lingua::PlantUML::Encode') || print "Bail out!\n";
+  use_ok('UML::PlantUML::Encoder') || print "Bail out!\n";
 }
 
 diag(
-"Testing Lingua::PlantUML::Encode $Lingua::PlantUML::Encode::VERSION, Perl $], $^X"
+"Testing UML::PlantUML::Encoder $UML::PlantUML::Encoder::VERSION, Perl $], $^X"
 );

@@ -14,6 +14,6 @@ inc/
 nytprof.out
 pod2htm*.tmp
 pm_to_blib
-Lingua-PlantUML-Encode-*
-Lingua-PlantUML-Encode-*.tar.gz
+UML-PlantUML-Encoder-*
+UML-PlantUML-Encoder-*.tar.gz
 .git

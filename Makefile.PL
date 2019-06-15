@@ -4,10 +4,10 @@ use warnings;
 use ExtUtils::MakeMaker;
 
 my %WriteMakefileArgs = (
-    NAME             => 'Lingua::PlantUML::Encode',
+    NAME             => 'UML::PlantUML::Encoder',
     AUTHOR           => q{Rangana Sudesha Withanage <rwi@cpan.org>},
-    VERSION_FROM     => 'lib/Lingua/PlantUML/Encode.pm',
-    ABSTRACT_FROM    => 'lib/Lingua/PlantUML/Encode.pm',
+    VERSION_FROM     => 'lib/UML/PlantUML/Encoder.pm',
+    ABSTRACT_FROM    => 'lib/UML/PlantUML/Encoder.pm',
     LICENSE          => 'perl_5',
     MIN_PERL_VERSION => '5.006',
     CONFIGURE_REQUIRES => {
@@ -21,7 +21,7 @@ my %WriteMakefileArgs = (
         #'Foo::Bar::Module' => '5.0401',
     },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
-    clean => { FILES => 'Lingua-PlantUML-Encode-*' },
+    clean => { FILES => 'UML-PlantUML-Encoder-*' },
 );
 
 # Compatibility with old versions of ExtUtils::MakeMaker

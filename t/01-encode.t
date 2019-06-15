@@ -6,7 +6,7 @@ use Test::More;
 
 plan tests => 1;
 
-use Lingua::PlantUML::Encode qw(encode_p);
+use UML::PlantUML::Encoder qw(encode_p);
 
 my $encoded = encode_p(
   qq{
