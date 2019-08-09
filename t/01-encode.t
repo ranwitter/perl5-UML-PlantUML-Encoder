@@ -9,7 +9,7 @@ plan tests => 1;
 use UML::PlantUML::Encoder qw(encode_p);
 
 my $encoded = encode_p(
-  qq{
+    qq{
 Alice -> Bob: Authentication Request
 Bob --> Alice: Authentication Response
 }
@@ -17,8 +17,7 @@ Bob --> Alice: Authentication Response
 
 diag $encoded;
 
-ok(
-  $encoded eq
-'69NZSip9J4vLqBLJSCfFib9mB2t9ICqhoKnEBCdCprC8IYqiJIqkuGBAAUW2rO0LOr5LN92VLvpA1G3PV1em',
-  'Encoding works'
+ok( $encoded eq
+        '69NZSip9J4vLqBLJSCfFib9mB2t9ICqhoKnEBCdCprC8IYqiJIqkuGBAAUW2rO0LOr5LN92VLvpA1G3PV1em',
+    'Encoding works'
 );

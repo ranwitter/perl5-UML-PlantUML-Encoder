@@ -11,10 +11,10 @@ use MIME::Base64;
 our ( @ISA, @EXPORT, @EXPORT_OK );
 
 BEGIN {
-  require Exporter;
-  @ISA       = qw(Exporter);
-  @EXPORT    = qw(encode_p);    # symbols to export
-  @EXPORT_OK = qw(encode_p);    # symbols to export on request
+    require Exporter;
+    @ISA       = qw(Exporter);
+    @EXPORT    = qw(encode_p);    # symbols to export
+    @EXPORT_OK = qw(encode_p);    # symbols to export on request
 }
 
 =head1 NAME
@@ -58,7 +58,7 @@ Encoded in UTF-8
 =cut
 
 sub utf8_encode {
-  return encode( 'UTF-8', $_[0] );
+    return encode( 'UTF-8', $_[0] );
 }
 
 =head2 _compress_with_deflate
@@ -68,11 +68,11 @@ Compressed using Deflate algorithm
 =cut
 
 sub _compress_with_deflate {
-  my $buffer;
-  my $d = deflateInit( -WindowBits => $_[1] );
-  $buffer = $d->deflate( $_[0] );
-  $buffer .= $d->flush();
-  return $buffer;
+    my $buffer;
+    my $d = deflateInit( -WindowBits => $_[1] );
+    $buffer = $d->deflate( $_[0] );
+    $buffer .= $d->flush();
+    return $buffer;
 }
 
 =head2 encode6bit
@@ -82,26 +82,26 @@ Transform to String of characters that contains only digits, letters, underscore
 =cut
 
 sub encode6bit {
-  my $b = $_[0];
-  if ( $b < 10 ) {
-    return chr( 48 + $b );
-  }
-  $b -= 10;
-  if ( $b < 26 ) {
-    return chr( 65 + $b );
-  }
-  $b -= 26;
-  if ( $b < 26 ) {
-    return chr( 97 + $b );
-  }
-  $b -= 26;
-  if ( $b == 0 ) {
-    return '-';
-  }
-  if ( $b == 1 ) {
-    return '_';
-  }
-  return '?';
+    my $b = $_[0];
+    if ( $b < 10 ) {
+        return chr( 48 + $b );
+    }
+    $b -= 10;
+    if ( $b < 26 ) {
+        return chr( 65 + $b );
+    }
+    $b -= 26;
+    if ( $b < 26 ) {
+        return chr( 97 + $b );
+    }
+    $b -= 26;
+    if ( $b == 0 ) {
+        return '-';
+    }
+    if ( $b == 1 ) {
+        return '_';
+    }
+    return '?';
 }
 
 =head2 append3bytes
@@ -111,20 +111,20 @@ Transform adjacent bytes
 =cut
 
 sub append3bytes {
-  my ( $c1, $c2, $c3, $c4, $r );
-  my $b1 = $_[0];
-  my $b2 = $_[1];
-  my $b3 = $_[2];
-  $c1 = $b1 >> 2;
-  $c2 = ( ( $b1 & 0x3 ) << 4 ) | ( $b2 >> 4 );
-  $c3 = ( ( $b2 & 0xF ) << 2 ) | ( $b3 >> 6 );
-  $c4 = $b3 & 0x3F;
-  $r  = "";
-  $r .= encode6bit( $c1 & 0x3F );
-  $r .= encode6bit( $c2 & 0x3F );
-  $r .= encode6bit( $c3 & 0x3F );
-  $r .= encode6bit( $c4 & 0x3F );
-  return $r;
+    my ( $c1, $c2, $c3, $c4, $r );
+    my $b1 = $_[0];
+    my $b2 = $_[1];
+    my $b3 = $_[2];
+    $c1 = $b1 >> 2;
+    $c2 = ( ( $b1 & 0x3 ) << 4 ) | ( $b2 >> 4 );
+    $c3 = ( ( $b2 & 0xF ) << 2 ) | ( $b3 >> 6 );
+    $c4 = $b3 & 0x3F;
+    $r  = "";
+    $r .= encode6bit( $c1 & 0x3F );
+    $r .= encode6bit( $c2 & 0x3F );
+    $r .= encode6bit( $c3 & 0x3F );
+    $r .= encode6bit( $c4 & 0x3F );
+    return $r;
 }
 
 =head2 encode64
@@ -134,27 +134,27 @@ Reencoded in ASCII using a transformation close to base64
 =cut
 
 sub encode64 {
-  my $c   = $_[0];
-  my $str = "";
-  my $len = length $c;
-  my $i;
-  for ( $i = 0 ; $i < $len ; $i += 3 ) {
-    if ( $i + 2 == $len ) {
-      $str .= append3bytes( ord( substr( $c, $i, 1 ) ),
-        ord( substr( $c, $i + 1, 1 ) ), 0 );
+    my $c   = $_[0];
+    my $str = "";
+    my $len = length $c;
+    my $i;
+    for ( $i = 0; $i < $len; $i += 3 ) {
+        if ( $i + 2 == $len ) {
+            $str .= append3bytes( ord( substr( $c, $i, 1 ) ),
+                ord( substr( $c, $i + 1, 1 ) ), 0 );
+        }
+        elsif ( $i + 1 == $len ) {
+            $str .= append3bytes( ord( substr( $c, $i, 1 ) ), 0, 0 );
+        }
+        else {
+            $str .= append3bytes(
+                ord( substr( $c, $i,     1 ) ),
+                ord( substr( $c, $i + 1, 1 ) ),
+                ord( substr( $c, $i + 2, 1 ) )
+            );
+        }
     }
-    elsif ( $i + 1 == $len ) {
-      $str .= append3bytes( ord( substr( $c, $i, 1 ) ), 0, 0 );
-    }
-    else {
-      $str .= append3bytes(
-        ord( substr( $c, $i,     1 ) ),
-        ord( substr( $c, $i + 1, 1 ) ),
-        ord( substr( $c, $i + 2, 1 ) )
-      );
-    }
-  }
-  return $str;
+    return $str;
 }
 
 =head2 encode_p
@@ -164,9 +164,9 @@ Encodes diagram text descriptions
 =cut
 
 sub encode_p {
-  my $data       = utf8_encode( $_[0] );
-  my $compressed = _compress_with_deflate( $data, 9 );
-  return encode64($compressed);
+    my $data       = utf8_encode( $_[0] );
+    my $compressed = _compress_with_deflate( $data, 9 );
+    return encode64($compressed);
 }
 
 =head1 AUTHOR
