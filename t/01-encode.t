@@ -15,7 +15,7 @@ Bob --> Alice: Authentication Response
 }
 );
 
-diag $encoded;
+#diag $encoded;
 
 ok( $encoded eq
         '69NZSip9J4vLqBLJSCfFib9mB2t9ICqhoKnEBCdCprC8IYqiJIqkuGBAAUW2rO0LOr5LN92VLvpA1G3PV1em',
