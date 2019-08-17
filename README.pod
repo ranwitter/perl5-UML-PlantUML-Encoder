@@ -1,4 +1,4 @@
-=for html <a href="https://travis-ci.com/ranwitter/perl5-UML-PlantUML-Encoder"><img src="https://travis-ci.com/ranwitter/perl5-UML-PlantUML-Encoder.svg?branch=master"></a><a title="Artistic-2.0" href="https://opensource.org/licenses/Artistic-2.0"><img src="https://img.shields.io/badge/License-Perl-0298c3.svg"></a>
+=for html <a href="https://travis-ci.com/ranwitter/perl5-UML-PlantUML-Encoder"><img src="https://travis-ci.com/ranwitter/perl5-UML-PlantUML-Encoder.svg?branch=master"></a>&nbsp;<a title="Artistic-2.0" href="https://opensource.org/licenses/Artistic-2.0"><img src="https://img.shields.io/badge/License-Perl-0298c3.svg"></a>
 
 =head1 NAME
 
