@@ -17,6 +17,8 @@ BEGIN {
     @EXPORT_OK = qw(encode_p);    # symbols to export on request
 }
 
+=for html <a href="https://travis-ci.com/ranwitter/perl5-UML-PlantUML-Encoder"><img src="https://travis-ci.com/ranwitter/perl5-UML-PlantUML-Encoder.svg?branch=master"></a>&nbsp;<a title="Artistic-2.0" href="https://opensource.org/licenses/Artistic-2.0"><img src="https://img.shields.io/badge/License-Perl-0298c3.svg"></a>
+
 =head1 NAME
 
 UML::PlantUML::Encoder - Provides PlantUML Language's Encoding in Perl
@@ -40,10 +42,16 @@ our $VERSION = '0.02';
        Bob --> Alice: Authentication Response
     });
 
-    print "http://www.plantuml.com/plantuml/uml/$encoded";
-    print "http://www.plantuml.com/plantuml/png/$encoded";
-    print "http://www.plantuml.com/plantuml/svg/$encoded";
-    print "http://www.plantuml.com/plantuml/txt/$encoded";
+    print "\nhttp://www.plantuml.com/plantuml/uml/$encoded";
+    print "\nhttp://www.plantuml.com/plantuml/png/$encoded";
+    print "\nhttp://www.plantuml.com/plantuml/svg/$encoded";
+    print "\nhttp://www.plantuml.com/plantuml/txt/$encoded";
+
+    # Output
+    http://www.plantuml.com/plantuml/uml/69NZKe00nvpCv5G5NJi5f_maAmN7qfACrBoIpEJ4aipyF8MWrCBIrE8IBgXQe185NQ1Ii1uiYeiBylEAKy6g0HPp7700
+    http://www.plantuml.com/plantuml/png/69NZKe00nvpCv5G5NJi5f_maAmN7qfACrBoIpEJ4aipyF8MWrCBIrE8IBgXQe185NQ1Ii1uiYeiBylEAKy6g0HPp7700
+    http://www.plantuml.com/plantuml/svg/69NZKe00nvpCv5G5NJi5f_maAmN7qfACrBoIpEJ4aipyF8MWrCBIrE8IBgXQe185NQ1Ii1uiYeiBylEAKy6g0HPp7700
+    http://www.plantuml.com/plantuml/txt/69NZKe00nvpCv5G5NJi5f_maAmN7qfACrBoIpEJ4aipyF8MWrCBIrE8IBgXQe185NQ1Ii1uiYeiBylEAKy6g0HPp7700
 
 =head1 EXPORT
 
@@ -194,9 +202,9 @@ You can also look for information at:
 
 L<https://rt.cpan.org/NoAuth/Bugs.html?Dist=UML-PlantUML-Encoder>
 
-=item * AnnoCPAN: Annotated CPAN documentation
+=item * GitHub Repository
 
-L<http://annocpan.org/dist/UML-PlantUML-Encoder>
+L<https://github.com/ranwitter/perl5-UML-PlantUML-Encoder>
 
 =item * CPAN Ratings
 
@@ -207,10 +215,6 @@ L<https://cpanratings.perl.org/d/UML-PlantUML-Encoder>
 L<https://metacpan.org/release/UML-PlantUML-Encoder>
 
 =back
-
-
-=head1 ACKNOWLEDGEMENTS
-
 
 =head1 LICENSE AND COPYRIGHT
 

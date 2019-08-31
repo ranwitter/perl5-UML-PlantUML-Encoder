@@ -1,5 +1,7 @@
 .git
+.travis.yml
 MANIFEST.SKIP
 ignore.txt
 xt/boilerplate.t
-
+MYMETA.json
+MYMETA.yaml
