@@ -48,10 +48,10 @@ our $VERSION = '0.02';
     print "\nhttp://www.plantuml.com/plantuml/txt/$encoded";
 
     # Output
-    http://www.plantuml.com/plantuml/uml/69NZKe00nvpCv5G5NJi5f_maAmN7qfACrBoIpEJ4aipyF8MWrCBIrE8IBgXQe185NQ1Ii1uiYeiBylEAKy6g0HPp7700
-    http://www.plantuml.com/plantuml/png/69NZKe00nvpCv5G5NJi5f_maAmN7qfACrBoIpEJ4aipyF8MWrCBIrE8IBgXQe185NQ1Ii1uiYeiBylEAKy6g0HPp7700
-    http://www.plantuml.com/plantuml/svg/69NZKe00nvpCv5G5NJi5f_maAmN7qfACrBoIpEJ4aipyF8MWrCBIrE8IBgXQe185NQ1Ii1uiYeiBylEAKy6g0HPp7700
-    http://www.plantuml.com/plantuml/txt/69NZKe00nvpCv5G5NJi5f_maAmN7qfACrBoIpEJ4aipyF8MWrCBIrE8IBgXQe185NQ1Ii1uiYeiBylEAKy6g0HPp7700
+    http://www.plantuml.com/plantuml/uml/~169NZKe00nvpCv5G5NJi5f_maAmN7qfACrBoIpEJ4aipyF8MWrCBIrE8IBgXQe185NQ1Ii1uiYeiBylEAKy6g0HPp7700
+    http://www.plantuml.com/plantuml/png/~169NZKe00nvpCv5G5NJi5f_maAmN7qfACrBoIpEJ4aipyF8MWrCBIrE8IBgXQe185NQ1Ii1uiYeiBylEAKy6g0HPp7700
+    http://www.plantuml.com/plantuml/svg/~169NZKe00nvpCv5G5NJi5f_maAmN7qfACrBoIpEJ4aipyF8MWrCBIrE8IBgXQe185NQ1Ii1uiYeiBylEAKy6g0HPp7700
+    http://www.plantuml.com/plantuml/txt/~169NZKe00nvpCv5G5NJi5f_maAmN7qfACrBoIpEJ4aipyF8MWrCBIrE8IBgXQe185NQ1Ii1uiYeiBylEAKy6g0HPp7700
 
 =head1 EXPORT
 
@@ -165,6 +165,16 @@ sub encode64 {
     return $str;
 }
 
+=head2 add_header_huffman 
+
+To Indicate that this is Huffman Encoding add an header ~1.
+
+=cut
+
+sub add_header_huffman {
+  return '~1' . $_[0];
+}
+
 =head2 encode_p
 
 Encodes diagram text descriptions 
@@ -174,7 +184,7 @@ Encodes diagram text descriptions
 sub encode_p {
     my $data       = utf8_encode( $_[0] );
     my $compressed = _compress_with_deflate( $data, 9 );
-    return encode64($compressed);
+    return add_header_huffman(encode64($compressed));
 }
 
 =head1 AUTHOR

@@ -25,10 +25,10 @@ Version 0.02
     print "\nhttp://www.plantuml.com/plantuml/txt/$encoded";
 
     # Output
-    http://www.plantuml.com/plantuml/uml/69NZKe00nvpCv5G5NJi5f_maAmN7qfACrBoIpEJ4aipyF8MWrCBIrE8IBgXQe185NQ1Ii1uiYeiBylEAKy6g0HPp7700
-    http://www.plantuml.com/plantuml/png/69NZKe00nvpCv5G5NJi5f_maAmN7qfACrBoIpEJ4aipyF8MWrCBIrE8IBgXQe185NQ1Ii1uiYeiBylEAKy6g0HPp7700
-    http://www.plantuml.com/plantuml/svg/69NZKe00nvpCv5G5NJi5f_maAmN7qfACrBoIpEJ4aipyF8MWrCBIrE8IBgXQe185NQ1Ii1uiYeiBylEAKy6g0HPp7700
-    http://www.plantuml.com/plantuml/txt/69NZKe00nvpCv5G5NJi5f_maAmN7qfACrBoIpEJ4aipyF8MWrCBIrE8IBgXQe185NQ1Ii1uiYeiBylEAKy6g0HPp7700
+    http://www.plantuml.com/plantuml/uml/~169NZKe00nvpCv5G5NJi5f_maAmN7qfACrBoIpEJ4aipyF8MWrCBIrE8IBgXQe185NQ1Ii1uiYeiBylEAKy6g0HPp7700
+    http://www.plantuml.com/plantuml/png/~169NZKe00nvpCv5G5NJi5f_maAmN7qfACrBoIpEJ4aipyF8MWrCBIrE8IBgXQe185NQ1Ii1uiYeiBylEAKy6g0HPp7700
+    http://www.plantuml.com/plantuml/svg/~169NZKe00nvpCv5G5NJi5f_maAmN7qfACrBoIpEJ4aipyF8MWrCBIrE8IBgXQe185NQ1Ii1uiYeiBylEAKy6g0HPp7700
+    http://www.plantuml.com/plantuml/txt/~169NZKe00nvpCv5G5NJi5f_maAmN7qfACrBoIpEJ4aipyF8MWrCBIrE8IBgXQe185NQ1Ii1uiYeiBylEAKy6g0HPp7700
 
 =head1 EXPORT
 
